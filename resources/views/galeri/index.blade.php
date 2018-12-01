@@ -16,7 +16,6 @@
 							<tr>
 								<th>No</th>
 								<th>Gambar</th>
-								<th>Nama</th>
 								<th colspan="3">Action</th>
 							</tr>	
 						</thead>
@@ -25,8 +24,8 @@
 							@foreach($galeris as $data)
 							<tr>
 								<td> {{ $no++ }} </td>
+								
 								<td><img src="{{ asset('/assets/img/fotogalery/'.$data->gambar.'')}}" width="70" height="70"></td>
-								<td> {{ $data->nama }} </td>
 								<td>
 									<a id="modal-edit" class="btn btn-primary" href="{{ route('galeri.edit',$data->id) }}" role="button" data-toggle="modal">Edit Data</a>
 								</td>

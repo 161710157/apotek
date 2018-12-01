@@ -6,7 +6,7 @@ use App\Obat;
 use App\Kategori;
 use Session;
 use File;
-
+use Alert;
 
 class ObatController extends Controller
 {
@@ -42,32 +42,31 @@ class ObatController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'nama_obat' => 'required|',
             'kategori_id' => 'required|',
             'harga' => 'required',
             'gambar' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'slug' => '',
         ]);
         
         $obats = new Obat;
         $obats->nama_obat = $request->nama_obat;
         $obats->kategori_id = $request->kategori_id;
         $obats->harga = $request->harga;
-        $obats->gambar = $request->gambar;
-
-
-        if ($request->hasFile('gambar')) {
+        if ($request->File('gambar')) {
             $file = $request->file('gambar');
-            $destinationPath = public_path() .DIRECTORY_SEPARATOR.'assets/img/fotoobat/';
+            $destinationPath = public_path() .'/assets/img/fotoobat/';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $uploadsucces = $file->move($destinationPath, $filename);
             $obats->gambar = $filename;
         }
 
         $obats->deskripsi = $request->deskripsi;
-
-        $obats->save();
+        $obats->slug =str_slug($request->nama_obat,'-');
+                $obats->save();
         return redirect()->route('obat.index');
     }
 
@@ -110,21 +109,21 @@ class ObatController extends Controller
             'kategori_id' => 'required|',
             'harga' => 'required|',
             'gambar' => 'required|',
-            'deskripsi' => 'required|'
+            'deskripsi' => 'required|',
+            'slug' => '',
         ]);
+        
         $obats = Obat::findOrFail($obat);
         $obats->nama_obat = $request->nama_obat;
         $obats->kategori_id = $request->kategori_id;
         $obats->harga = $request->harga;
-        $obats->gambar = $request->gambar;
         
-        $obats = Obat::findOrFail($obat);
-        $obats->gambar = $request->gambar;
-        if ($request->hasFile('gambar')) {
+        if ($request->File('gambar')) {
             $file = $request->file('gambar');
             $destinationPath = public_path().'/assets/img/fotoobat/';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $uploadsucces = $file->move($destinationPath, $filename);
+
         if ($obats->gambar){
             $old_foto = $obats->gambar;
             $filepath = public_path() . DIRECTORY_SEPARATOR . '/assets/img/fotoobat/'
@@ -136,9 +135,15 @@ class ObatController extends Controller
               }
 
         }
+
             $obats->gambar = $filename;
-        }    $obats->deskripsi = $request->deskripsi;
-     $obats->save();
+        }
+            
+      
+        $obats->deskripsi = $request->deskripsi;
+        $obats->slug =str_slug($request->nama_obat,'-');
+        
+           $obats->save();
          return redirect()->route('obat.index');
     }
 
@@ -150,22 +155,8 @@ class ObatController extends Controller
      */
     public function destroy($id)
     {
-        $obats = Obat::findOrfail($id);
-        
-
-        if($obats->gambar){
-            $old_gambar = $obats->gambar;
-            $filepath = public_path() .DIRECTORY_SEPARATOR.'assets/img/fotoobat/'
-            . DIRECTORY_SEPARATOR . $obats->gambar;
-
-            try{
-                File::delete($filepath);
-            } catch (FileNotFoundException $e) {
-
-            }
-        }
+        $obats = Obat::findOrFail($id);
         $obats->delete();
-
         return redirect()->route('obat.index');
     }
 }

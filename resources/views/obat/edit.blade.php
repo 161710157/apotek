@@ -14,18 +14,7 @@
 						<input name="_method" type="hidden" value="PATCH">
 						{{ csrf_field() }}
 
-						
-						<div class="form-group {{ $errors->has('nama_obat') ? ' has-error' : '' }}">
-							<label class="control-label">Nama Obat</label>
-							<input type="text" name="nama_obat" class="form-control" value="{{ $obats->nama_obat }}"  required>
-							@if ($errors->has('nama_obat'))
-							<span class="help-block">
-								<strong>{{ $errors->first('nama_obat') }}</strong>
-							</span>
-							@endif
-						</div>
-
-					<div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
+						<div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
 							<label class="control-label">Kategori</label>
 							<select name="kategori_id" class="form-control">
 								@foreach($kategori as $data)
@@ -39,6 +28,18 @@
 							@endif
 						</div>
 
+
+						<div class="form-group {{ $errors->has('nama_obat') ? ' has-error' : '' }}">
+							<label class="control-label">Nama Obat</label>
+							<input type="text" name="nama_obat" class="form-control" value="{{ $obats->nama_obat }}"  required>
+							@if ($errors->has('nama_obat'))
+							<span class="help-block">
+								<strong>{{ $errors->first('nama_obat') }}</strong>
+							</span>
+							@endif
+						</div>
+
+					
 						<div class="form-group {{ $errors->has('harga') ? ' has-error' : '' }}">
 							<label class="control-label">Harga</label>
 							<input type="text" name="harga" class="form-control" value="{{ $obats->harga }}"  required>
@@ -49,28 +50,24 @@
 							@endif
 						</div>
 
-						<div class="form-group {{ $errors->has('gambar') ? ' has-error' : '' }}">
-							<label class="control-label">Gambar</label>
-							<input type="file" name="gambar" class="form-control" accept="img/*" value="{{ $obats->gambar }}"  required>
-							@if ($errors->has('gambar'))
-							<span class="help-block">
-								<strong>{{ $errors->first('gambar') }}</strong>
-							</span>
-							@endif
-						</div>
 
-
-
+                      <div class="form-group {{$errors->has('gambar') ? 'has-error' : '' }}">
+				<label class="control-label">Gambar</label>
+				<input type="file" id="gambar" name="gambar" class="validate" accept="image/*" required>
+				@if ($errors->has('gambar'))
+				<span class="help-block"><strong>{{ $errors->first('gambar') }}</strong></span>
+				@endif
+			</div>
+                         
 						<div class="form-group {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
 							<label class="control-label">Deskripsi</label>
-							<input type="text" name="deskripsi" class="form-control" value="{{ $obats->deskripsi }}"  required>
+							<input type="text" name="deskripsi" class="form-control"  required>
 							@if ($errors->has('deskripsi'))
 							<span class="help-block">
 								<strong>{{ $errors->first('deskripsi') }}</strong>
 							</span>
 							@endif
 						</div>
-
 
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Edit</button>

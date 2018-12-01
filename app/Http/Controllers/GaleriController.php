@@ -49,18 +49,17 @@ class GaleriController extends Controller
     {
         $this->validate($request,[
             'gambar' => 'required|',
-            'nama' => 'required|'
+            'slug' => '',
         ]);
         $galeris = new Galeri;
-        $galeris->gambar = $request->gambar;
-        if ($request->hasFile('gambar')) {
+        if ($request->File('gambar')) {
             $file = $request->file('gambar');
             $destinationPath = public_path().'/assets/img/fotogalery/';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $uploadsucces = $file->move($destinationPath, $filename);
             $galeris->gambar = $filename;
         }
-        $galeris->nama = $request->nama;
+        $galeris->slug =str_slug($request->nama_obat,'-');
         $galeris->save();
         
                 return redirect()->route('galeri.index');
@@ -103,11 +102,10 @@ class GaleriController extends Controller
     {
         $this->validate($request,[
             'gambar' => 'required|',
-            'nama' => 'required'
+            'slug' => '',
         ]);
         $galeris = Galeri::findOrFail($id);
-        $galeris->gambar = $request->gambar;
-        if ($request->hasFile('gambar')) {
+        if ($request->File('gambar')) {
             $file = $request->file('gambar');
             $destinationPath = public_path().'/assets/img/fotogalery/';
             $filename = str_random(6).'_'.$file->getClientOriginalName();
@@ -125,7 +123,7 @@ class GaleriController extends Controller
         }
             $galeris->gambar = $filename;
         }
-        $galeris->nama = $request->nama;
+        $galeris->slug =str_slug($request->nama_obat,'-');
         $galeris->save();
         return redirect()->route('galeri.index');
     }
@@ -139,22 +137,8 @@ class GaleriController extends Controller
      */
     public function destroy( $id)
     {
-        $galeris = Galeri::findOrFail($id);
-        if ($galeris->gambar){
-            $old_foto = $galeris->gambar;
-            $filepath = public_path() . DIRECTORY_SEPARATOR . '/assets/img/fotogalery/'
-            . DIRECTORY_SEPARATOR . $galeris->gambar;
-              try{
-                  file::delete($filepath);
-              } 
-              catch (FileNotFoundException $e) {
-                  
-              
-            }
-        }
-
+       $galeris = Galeri::findOrFail($id);
         $galeris->delete();
         return redirect()->route('galeri.index');
     }
-    }
-
+}

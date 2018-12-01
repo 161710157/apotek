@@ -13,25 +13,14 @@
 					<form action="{{ route('galeri.store') }}" method="post" enctype="multipart/form-data">
 						{{ csrf_field() }}
                         
-                        <div class="form-group {{ $errors->has('gambar') ? ' has-error' : '' }}">
-							<label class="control-label">Gambar</label>
-							<input type="file" name="gambar" class="form-control" accept="img/*" required>
-							@if ($errors->has('gambar'))
-							<span class="help-block">
-								<strong>{{ $errors->first('gambar') }}</strong>
-							</span>
-							@endif
-						</div>
+                       <div class="form-group {{$errors->has('gambar') ? 'has-error' : '' }}">
+				<label class="control-label">Gambar</label>
+				<input type="file" id="gambar" name="gambar" class="validate" accept="image/*" required>
+				@if ($errors->has('gambar'))
+				<span class="help-block"><strong>{{ $errors->first('gambar') }}</strong></span>
+				@endif
+			</div>
 
-						<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
-							<label class="control-label">Nama</label>
-							<input type="text" name="nama" class="form-control"  required>
-							@if ($errors->has('nama'))
-							<span class="help-block">
-								<strong>{{ $errors->first('nama') }}</strong>
-							</span>
-							@endif
-						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Tambah</button>
 						</div>

@@ -6,13 +6,29 @@
 				{{ csrf_field() }}
 				<div class="modal-header">
 					<h5 class="modal-title" id="CreateObat">
-						Tambah Barang
+						Tambah Obat
 					</h5>
 					<button type="button" class="close" data-dismiss="modal">
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
 				<div class="modal-body">
+
+
+                        <div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
+			  			<label class="control-label">Kategori</label>	
+			  			<select name="kategori_id" class="form-control">
+			  				@foreach($kategori as $data)
+			  				<option value="{{ $data->id }}">{{ $data->kategori }}</option>
+			  				@endforeach
+			  			</select>
+			  			@if ($errors->has('kategori_id'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('kategori_id') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+	
 
 						<div class="form-group {{ $errors->has('nama_obat') ? ' has-error' : '' }}">
 							<label class="control-label">Nama Obat</label>
@@ -34,20 +50,18 @@
 							@endif
 						</div>
 
-						<div class="form-group {{ $errors->has('gambar') ? ' has-error' : '' }}">
-							<label class="control-label">gambar</label>
-							<input type="file" name="gambar" class="form-control" accept="img/*" required>
-							@if ($errors->has('gambar'))
-							<span class="help-block">
-								<strong>{{ $errors->first('gambar') }}</strong>
-							</span>
-							@endif
-						</div>
+						<div class="form-group {{$errors->has('gambar') ? 'has-error' : '' }}">
+				<label class="control-label">Gambar</label>
+				<input type="file" id="gambar" name="gambar" class="validate" accept="image/*" required>
+				@if ($errors->has('gambar'))
+				<span class="help-block"><strong>{{ $errors->first('gambar') }}</strong></span>
+				@endif
+			</div>
 
 
-						<div class="form-group {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
-							<label class="control-label">deskripsi</label>
-							<textarea id="text" type="ckeditor" name="deskripsi" class="ckeditor" required></textarea>
+						<div class="form-group {{ $errors->has('deskripi') ? ' has-error' : '' }}">
+							<label class="control-label">Deskripsi</label>
+							<input type="text" name="deskripsi" class="form-control"  required>
 							@if ($errors->has('deskripsi'))
 							<span class="help-block">
 								<strong>{{ $errors->first('deskripsi') }}</strong>
@@ -55,20 +69,8 @@
 							@endif
 						</div>
 
-			<div class="form-group {{ $errors->has('kategori_id') ? ' has-error' : '' }}">
-			  			<label class="control-label">Kategori</label>	
-			  			<select name="kategori_id" class="form-control">
-			  				@foreach($kategori as $data)
-			  				<option value="{{ $data->id }}">{{ $data->kategori }}</option>
-			  				@endforeach
-			  			</select>
-			  			@if ($errors->has('kategori_id'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('kategori_id') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
-	
+
+			
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary">
 						Save

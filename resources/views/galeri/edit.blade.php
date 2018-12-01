@@ -13,26 +13,17 @@
 					<form action="{{ route('galeri.update',$galeris->id) }}" method="post" enctype="multipart/form-data" >
 						<input name="_method" type="hidden" value="PATCH">
 
-						{{ csrf_field() }}
-						<div class="form-group {{ $errors->has('gambar') ? ' has-error' : '' }}">
-							<label class="control-label">Gambar</label>
-							<input type="file" name="gambar" class="form-control" accept="img/*" value="{{ $galeris->gambar }}"  required>
-							@if ($errors->has('gambar'))
-							<span class="help-block">
-								<strong>{{ $errors->first('gambar') }}</strong>
-							</span>
-							@endif
-						</div>
+						 <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Gambar</label>
+                                @if (isset($galeris) && $galeris->gambar)
+                                    <p>
+                                        <br>
+                                    <img src="{{ asset('assets/img/fotogalery/'.$galeris->gambar) }}" style="width:250px; height:250px;" alt="">
+                                    </p>
+                                @endif
+                                <input name="gambar" type="file" value="{{ $galeris->gambar }}">
+                            </div>
 
-						<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
-							<label class="control-label">Nama</label>
-							<input type="text" name="nama" class="form-control" value="{{ $galeris->nama }}"  required>
-							@if ($errors->has('nama'))
-							<span class="help-block">
-								<strong>{{ $errors->first('nama') }}</strong>
-							</span>
-							@endif
-						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Tambah</button>
 						</div>

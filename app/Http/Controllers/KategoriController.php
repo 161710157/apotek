@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Kategori;
+
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller

@@ -18,4 +18,8 @@ class Obat extends Model
         return $this->belongsTo('App\Kategori', 'kategori_id');
     }
     
+     public function getRouteKeyName()
+    {
+    	return 'slug';
+    }
 }

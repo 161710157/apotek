@@ -42,6 +42,9 @@
               <ul class="treeview-menu">
                 <li class="active"><a href="{{route('galeri.index')}}"><i class=" fa fa-picture-o"></i>Galeri</a></li>
           </ul>
+          <ul class="treeview-menu">
+                <li class="active"><a href="{{route('testimoni.index')}}"><i class="fa fa-newspaper-o nav-icon"></i>Testimoni</a></li>
+          </ul>
         </li>
       </ul>
     </section>

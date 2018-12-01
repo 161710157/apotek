@@ -15,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         schema::defaultStringLength(191);
+        view()->composer('frontends.sideproduk', function ($view) {
+            $recent = \App\Obat::orderBy('created_at', 'desc')->take(4)->get();
+            $view->with(compact('recent'));
+        });
+        
     }
 
     /**
