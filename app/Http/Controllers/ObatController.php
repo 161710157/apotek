@@ -43,11 +43,13 @@ class ObatController extends Controller
     public function store(Request $request)
     {
 
+        Alert::success('Data Successfully Saved','Good Job!')->autoclose(1700);
+
         $this->validate($request,[
             'nama_obat' => 'required|',
             'kategori_id' => 'required|',
             'harga' => 'required',
-            'gambar' => 'required',
+            'gambar' => '',
             'deskripsi' => 'required',
             'slug' => '',
         ]);
@@ -67,6 +69,23 @@ class ObatController extends Controller
         $obats->deskripsi = $request->deskripsi;
         $obats->slug =str_slug($request->nama_obat,'-');
                 $obats->save();
+                
+                  // $obats->publish = $request->publish;
+        return redirect()->route('obat.index');
+    }
+
+
+    public function Publish($id)
+    {
+        $obats = Obat::find($id);
+
+        if ($obats->status === 1) {
+            $obats->status = 0;
+        } else {
+            $obats->status= 1;
+        }
+
+        $obats->save();
         return redirect()->route('obat.index');
     }
 
@@ -78,7 +97,9 @@ class ObatController extends Controller
      */
     public function show($id)
     {
-        
+        $obats = Obat::findOrFail($id);
+        $kategori = Kategori::all();
+        return view('obat.show',compact('obats','kategori'));
     }
 
     /**
@@ -104,11 +125,13 @@ class ObatController extends Controller
      */
     public function update(Request $request, $obat)
     {
+          Alert::success('Data Successfully Changed','Good Job!')->autoclose(1700);
+
         $this->validate($request,[
             'nama_obat' => 'required|max:255',
             'kategori_id' => 'required|',
             'harga' => 'required|',
-            'gambar' => 'required|',
+            'gambar' => '',
             'deskripsi' => 'required|',
             'slug' => '',
         ]);
@@ -155,6 +178,8 @@ class ObatController extends Controller
      */
     public function destroy($id)
     {
+        Alert::success('Data Successfully Deleted','Good Job!')->autoclose(1700);
+        
         $obats = Obat::findOrFail($id);
         $obats->delete();
         return redirect()->route('obat.index');

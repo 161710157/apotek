@@ -12,7 +12,7 @@
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-
+				<div class="modal-body">
 				 <div class="form-group {{$errors->has('gambar') ? 'has-error' : '' }}">
 				<label class="control-label">Gambar</label>
 				<input type="file" id="gambar" name="gambar" class="validate" accept="image/*" required>
@@ -20,7 +20,18 @@
 				<span class="help-block"><strong>{{ $errors->first('gambar') }}</strong></span>
 				@endif
 			</div>
-
+				</div>
+			<div class="modal-body">
+				<div class="form-group {{ $errors->has('judul') ? ' has-error' : '' }}">
+					<label class="control-label">judul</label>
+					<input type="text" name="judul" class="form-control"  required>
+					@if ($errors->has('judul'))
+					<span class="help-block">
+						<strong>{{ $errors->first('judul') }}</strong>
+					</span>
+					@endif
+				</div>
+			</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary">
 						Save

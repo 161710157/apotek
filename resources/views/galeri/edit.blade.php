@@ -23,6 +23,17 @@
                                 @endif
                                 <input name="gambar" type="file" value="{{ $galeris->gambar }}">
                             </div>
+						
+							<div class="form-group {{ $errors->has('judul') ? ' has-error' : '' }}">
+								<label class="control-label">Judul</label>
+								<input type="text" name="judul" class="form-control" value="{{ $galeris->judul }}"  required>
+								@if ($errors->has('judul'))
+								<span class="help-block">
+									<strong>{{ $errors->first('judul') }}</strong>
+								</span>
+								@endif
+							</div>
+				
 
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Tambah</button>

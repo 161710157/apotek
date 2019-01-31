@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Obat extends Model
 {   
 	protected $table = 'obats';
-    protected $fillable = ['nama_obat','harga','gambar','deskripsi','kategori_id'];
+    protected $fillable = ['nama_obat','harga','gambar','deskripsi','kategori_id','publish'];
     public $timestamps = true;
     
     public function kategoris()

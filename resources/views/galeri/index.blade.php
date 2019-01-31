@@ -16,6 +16,7 @@
 							<tr>
 								<th>No</th>
 								<th>Gambar</th>
+								<th>Judul</th>
 								<th colspan="3">Action</th>
 							</tr>	
 						</thead>
@@ -26,15 +27,24 @@
 								<td> {{ $no++ }} </td>
 								
 								<td><img src="{{ asset('/assets/img/fotogalery/'.$data->gambar.'')}}" width="70" height="70"></td>
+								<td>{{ $data->judul}}</td>
 								<td>
-									<a id="modal-edit" class="btn btn-primary" href="{{ route('galeri.edit',$data->id) }}" role="button" data-toggle="modal">Edit Data</a>
+							          <a class="btn btn-warning" href="{{ route('galeri.edit',$data->id) }}">Edit</a>
 								</td>
-								<td>
+							
+						          <td>
 									<form method="post" action="{{ route('galeri.destroy',$data->id) }}">
 										<input name="_token" type="hidden" value="{{ csrf_token() }}">
-										<input type="hidden" name="_method" value="DELETE">
-									 <button type="submit" class="btn btn-round btn-danger"><a href="" class="fa fa-trash"></a>Hapus Data</button>
-							</form>
+									<input type="hidden" name="_method" value="DELETE">
+										<button onclick="return konfirmasi()"type="submit" class="btn btn-danger">Delete</button>
+								<script>
+									function konfirmasi(){
+										tanya = confirm("Yakin ingin menghapus data?");
+										if(tanya == true) return true;
+										else return false;
+									}
+								</script>
+	                            </form>
 								</td>
 							</tr>
 							@endforeach

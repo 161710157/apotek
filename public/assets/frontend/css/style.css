@@ -9,10 +9,10 @@ theme.
 
 This files contents are outlined below.
 
-	1. Variables
-	2. Prefix
-	3. header
-	4. Slider
+  1. Variables
+  2. Prefix
+  3. header
+  4. Slider
     5. Builder
     6. About
     7. Offer
@@ -46,10 +46,10 @@ This files contents are outlined below.
   font: 700 18px/59px "Roboto", sans-serif;
   width: 180px;
   text-align: center;
-  background: #f6b60b;
+  background: #228b22;
   display: block;
   border: 0;
-  color: #222222;
+  color: #000000;
   text-transform: uppercase;
   position: relative;
   z-index: 2;
@@ -59,7 +59,7 @@ This files contents are outlined below.
   content: "";
   position: absolute;
   z-index: -1;
-  background: #222222;
+  background: #228b22;
   top: 0;
   bottom: 0;
   left: 0;
@@ -72,7 +72,7 @@ This files contents are outlined below.
   transition-timing-function: ease-out;
 }
 .button_all:hover, .button_all:focus {
-  color: #fff !important;
+  color: #000000 !important;
 }
 .button_all:hover:before, .button_all:focus:before {
   transform: scaleY(1);
@@ -85,14 +85,14 @@ This files contents are outlined below.
 }
 .tittle h2 {
   font: 400 24px "Oswald", sans-serif;
-  color: #222222;
+  color: #228b22;
   padding-top: 90px;
   position: relative;
 }
 .tittle h2:after {
   content: "";
   position: absolute;
-  background: #f6b60b;
+  background: #228b22;
   height: 5px;
   width: 60px;
   left: 50%;
@@ -101,14 +101,14 @@ This files contents are outlined below.
 }
 .tittle h4 {
   font: 400 14px "Roboto", sans-serif;
-  color: #555555;
+  color: #228b22;
   padding-top: 55px;
 }
 
 /* Subtittle */
 .subtittle h2 {
   font: 700 36px "Roboto", sans-serif;
-  color: #222222;
+  color: #228b22;
   text-transform: uppercase;
   position: relative;
   margin-bottom: 20px;
@@ -118,13 +118,13 @@ This files contents are outlined below.
   position: absolute;
   height: 2px;
   width: 80px;
-  background: #222222;
+  background: #228b22;
   left: 0;
   bottom: -22px;
 }
 .subtittle h5 {
   font: 400 14px "Roboto", sans-serif;
-  color: #555555;
+  color: #228b22;
   padding-top: 22px;
 }
 
@@ -147,7 +147,7 @@ This files contents are outlined below.
 .m0 {
   margin: 0;
 }
-
+  
 .p0 {
   padding: 0;
 }
@@ -186,22 +186,22 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /*--------------------------------------------------*/
 /* Top header */
 .top_header_area {
-  background: #111f29;
+  background: #d3dadf;
 }
 .top_header_area .top_nav li a {
   font: 400 14px/50px "Roboto", sans-serif;
-  color: #fff;
+  color: #FFFF00;
   padding: 0;
   padding-left: 30px;
 }
 .top_header_area .top_nav li a i {
-  color: #f6b60b;
+  color: #FFFF00;
   font-size: 18px;
   padding-right: 10px;
 }
 .top_header_area .top_nav li a:hover, .top_header_area .top_nav li a:focus {
   background-color: transparent;
-  color: #f6b60b;
+  color: #FFFF00;
 }
 .top_header_area .top_nav li:first-child a {
   padding: 0;
@@ -212,7 +212,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .top_header_area .social_nav li a {
   font-size: 14px;
-  color: #fff;
+  color: #FFFF00;
   padding: 0;
   text-align: center;
   height: 24px;
@@ -224,8 +224,8 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   line-height: 24px;
 }
 .top_header_area .social_nav li a:hover, .top_header_area .social_nav li a:focus {
-  background: #f6b60b;
-  color: #111f29;
+  background: #006400;
+  color: #FFFF00;
 }
 
 /* End Top header */
@@ -236,7 +236,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   overflow: hidden;
 }
 .top_header_area.top_header .right_top_header {
-  background: #111f29;
+  background: #006400;
   display: block;
   overflow: hidden;
   padding-left: 20px;
@@ -246,7 +246,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: absolute;
   right: 0;
   width: 50%;
-  background: #111f29;
+  background: #006400;
   height: 50px;
   z-index: -1;
 }
@@ -273,7 +273,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   border: none;
   font-size: 14px;
   padding: 0 45px;
-  background: #f6b60b;
+  background: #fff;
   color: #fff;
   cursor: pointer;
 }
@@ -283,7 +283,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   border-radius: 0;
   border: none;
   color: #fff;
-  background: #f6b60b;
+  background: #fff;
   text-align: center;
   font: 400 16px "Roboto", sans-serif;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -312,7 +312,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .header_aera .navbar-collapse .navbar-nav.navbar-right li a {
   font: 700 14px/100px "Roboto", sans-serif;
-  color: #222222;
+  color: #228B22;
   text-transform: uppercase;
   padding: 0;
   padding-left: 30px;
@@ -329,7 +329,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   margin-left: 15px;
 }
 .header_aera .navbar-collapse .navbar-nav.navbar-right li .nav_searchFrom:hover, .header_aera .navbar-collapse .navbar-nav.navbar-right li .nav_searchFrom:focus {
-  color: #222222;
+  color: #ffff00;
 }
 @media (min-width: 768px) {
   .header_aera .navbar-collapse .navbar-nav.navbar-right li.submenu .other_dropdwn {
@@ -556,7 +556,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /* End slider_area_tow */
 /* Banner Area */
 .banner_area {
-  background: url("../images/banner-bg.jpg") no-repeat fixed;
+  background: url("../images/elements.jpg") no-repeat fixed;
   background-position: center;
   text-align: center;
   position: relative;
@@ -567,7 +567,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   content: "";
   position: absolute;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+
   left: 0;
   right: 0;
   bottom: 0;
@@ -575,7 +575,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   z-index: -1;
 }
 .banner_area h2 {
-  color: #fff;
+  color: #228B22;
   font: 400 40px "Oswald", sans-serif;
   text-transform: uppercase;
   padding-top: 85px;
@@ -586,16 +586,16 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .banner_area .breadcrumb li a {
   font: 400 14px "Roboto", sans-serif;
-  color: #fefefe;
+  color: #FFFF00;
 }
 .banner_area .breadcrumb li a.active {
-  color: #f6b60b;
+  color: #FFFF00;
 }
 
 /* End Banner Area */
 /*--------------------------------------------------*/
 .professional_builder {
-  background: #f5f5f5;
+  background: #000000;
   padding-top: 80px;
   padding-bottom: 50px;
 }
@@ -781,14 +781,14 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /*--------------------------------------------------*/
 /* our_services_area */
 .our_services_area {
-  background: #2e3841;
+  background: #fff;
   padding-bottom: 100px;
 }
 .our_services_area .tittle h2 {
-  color: #fff;
+  color: #228B22;
 }
 .our_services_area .tittle h4 {
-  color: #fefefe;
+  color: #000000;
 }
 .our_services_area .portfolio_inner_area {
   padding-top: 60px;
@@ -812,10 +812,10 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 .our_services_area .portfolio_inner_area .portfolio_filter ul li a {
   font: 400 14px "Oswald", sans-serif;
   text-transform: uppercase;
-  color: #f5f5f5;
+  color: #000000;
 }
 .our_services_area .portfolio_inner_area .portfolio_filter ul li:hover a, .our_services_area .portfolio_inner_area .portfolio_filter ul li:focus a, .our_services_area .portfolio_inner_area .portfolio_filter ul li.active a {
-  color: #f6b60b;
+  color: #000000;
 }
 .our_services_area .portfolio_inner_area .portfolio_item .single_facilities .single_facilities_inner {
   position: relative;
@@ -839,7 +839,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   transition: all 300ms linear 0s;
 }
 .our_services_area .portfolio_inner_area .portfolio_item .single_facilities .single_facilities_inner .gallery_hover h4 {
-  color: #fff;
+  color: #000000;
   font: 700 14px "Roboto", sans-serif;
   padding-bottom: 30px;
   text-transform: uppercase;
@@ -971,7 +971,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /*--------------------------------------------------*/
 .our_team_area {
   padding-bottom: 70px;
-  background: #fefefe;
+  background: #fff;
 }
 .our_team_area .team_row {
   padding-top: 70px;
@@ -987,7 +987,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   max-width: 100%;
 }
 .our_team_area .team_row .team_membar .team_content {
-  background: #f6b60b;
+  background: #fff;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 30px;
@@ -1023,7 +1023,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   display: block;
 }
 .our_team_area .team_row .team_membar .team_content ul li a:hover, .our_team_area .team_row .team_membar .team_content ul li a:focus {
-  color: #f6b60b;
+  color: #fff;
   background: #fff;
 }
 .our_team_area .team_row .team_membar .team_content .name {
@@ -1066,7 +1066,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   color: #fff;
 }
 .our_achievments_area .tittle h4 {
-  color: #fefefe;
+  color: #fff;
 }
 .our_achievments_area .achievments_row {
   padding-top: 60px;
@@ -1086,7 +1086,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .our_achievments_area .achievments_row .completed .counter {
   font: 700 40px "Roboto", sans-serif;
-  color: #f6b60b;
+  color: #fff;
   display: block;
   padding-top: 23px;
 }
@@ -1341,7 +1341,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   color: #f6b60b;
 }
 .latest_blog_area .latest_blog .blog_content h4 span {
-  color: #f6b60b;
+  color: #555555;
   width: 40px;
   text-align: center;
   display: inline-block;
@@ -1957,7 +1957,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .all_contact_info .contact_row .contact_info h2 {
   font: 700 26px/1 "Roboto", sans-serif;
-  color: #222222;
+  color: #006400;
   padding-bottom: 30px;
   position: relative;
 }
@@ -1966,13 +1966,13 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: absolute;
   height: 2px;
   width: 80px;
-  background: #f6b60b;
+  background: #006400;
   left: 0;
   bottom: 0;
 }
 .all_contact_info .contact_row .contact_info p {
   font: 400 14px/26px "Roboto", sans-serif;
-  color: #555555;
+  color: #006400;
   padding-top: 30px;
 }
 .all_contact_info .contact_row .contact_info .location {
@@ -1980,12 +1980,12 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .all_contact_info .contact_row .contact_info .location a {
   font: 400 14px/28px "Roboto", sans-serif;
-  color: #555555;
+  color: #006400;
   display: block;
   text-transform: uppercase;
 }
 .all_contact_info .contact_row .contact_info .location a:hover, .all_contact_info .contact_row .contact_info .location a:focus {
-  color: #f6b60b;
+  color: #006400;
 }
 .all_contact_info .contact_row .contact_info .location .f_location {
   padding-bottom: 30px;
@@ -2001,58 +2001,59 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   padding-top: 30px;
 }
 .all_contact_info .contact_row .send_message .contact_box .input_box {
-  border: 1px solid #dfe3e4;
+  border: 1px solid #006400;
   border-radius: 0;
   box-shadow: none;
   outline: none;
   height: 50px;
   padding-left: 15px;
   width: 100%;
-  color: #d3dadf;
+  color: #006400;
   margin-bottom: 20px;
 }
 .all_contact_info .contact_row .send_message .contact_box .input_box.placeholder {
-  color: #d3dadf;
+  color: #006400;
 }
 .all_contact_info .contact_row .send_message .contact_box .input_box:-moz-placeholder {
-  color: #d3dadf;
+  color: #006400;
 }
 .all_contact_info .contact_row .send_message .contact_box .input_box::-webkit-input-placeholder {
-  color: #d3dadf;
+  color: #006400;
 }
 .all_contact_info .contact_row .send_message .contact_box textarea {
   height: 120px !important;
   resize: none;
 }
 .all_contact_info .contact_row .send_message .contact_box button {
-  color: #fefefe;
+  color: #006400;
   font: 400 14px/40px "Roboto", sans-serif;
-  background: #f6b60b;
+  background: #006400;
   width: 140px;
-  color: #222222;
+  color: #006400;
   border: 0;
   border-radius: 0;
   text-transform: uppercase;
 }
 .all_contact_info .contact_row .send_message .contact_box button:hover, .all_contact_info .contact_row .send_message .contact_box button:focus {
-  color: #f6b60b;
-  background: #222222;
+  color: #006400;
+  background: #006400;
 }
 
 /* End All contact Info Css */
 /*--------------------------------------------------*/
 .footer_area {
-  background: url("../images/footer.jpg") no-repeat;
+  background: url("../images/elements.jpg") no-repeat fixed;
   position: relative;
   background-size: cover;
+  text-align: center;
   background-position: center;
   z-index: 1;
+  padding-bottom: 80px;
 }
 .footer_area:after {
   content: "";
   position: absolute;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
   left: 0;
   right: 0;
   bottom: 0;
@@ -2077,7 +2078,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .footer_area .footer_row .footer_about p {
   font: 400 14px/26px "Oswald", sans-serif;
-  color: #fefefe;
+  color: #fff;
   padding-top: 22px;
 }
 .footer_area .footer_row .footer_about .socail_icon {
@@ -2094,7 +2095,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   padding: 0;
 }
 .footer_area .footer_row .footer_about .socail_icon li a {
-  border: 2px solid #f6b60b;
+  border: 2px solid #fff;
   display: block;
   line-height: 26px;
   width: 30px;
@@ -2109,7 +2110,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   top: 0;
   bottom: 0;
   right: 0;
-  background: #f6b60b;
+  background: #fff;
   z-index: -1;
   transform: scaleY(0);
   transform-origin: 50%;
@@ -2135,13 +2136,13 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .footer_area .footer_row .footer_about .quick_link li a {
   font: 400 14px/28px "Roboto", sans-serif;
-  color: #fefefe;
+  color: #fff;
   position: relative;
   padding-left: 30px;
 }
 .footer_area .footer_row .footer_about .quick_link li a i {
   font-size: 14px;
-  color: #f6b60b;
+  color: #fff;
   padding-right: 20px;
   position: absolute;
   left: 0;
@@ -2149,19 +2150,19 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   transition: all 300ms linear 0s;
 }
 .footer_area .footer_row .footer_about .quick_link li a:hover, .footer_area .footer_row .footer_about .quick_link li a:focus {
-  color: #f6b60b;
+  color: #fff;
 }
 .footer_area .footer_row .footer_about .quick_link li a:hover i, .footer_area .footer_row .footer_about .quick_link li a:focus i {
   left: 8px;
 }
 .footer_area .footer_row .footer_about .twitter {
   font: 400 14px/28px "Roboto", sans-serif;
-  color: #fefefe;
+  color: #fff;
   display: block;
   padding-bottom: 15px;
 }
 .footer_area .footer_row .footer_about .twitter:hover, .footer_area .footer_row .footer_about .twitter:focus {
-  color: #f6b60b;
+  color: #fff;
 }
 .footer_area .footer_row .footer_about address p {
   font: 400 14px/28px "Roboto", sans-serif;
@@ -2181,13 +2182,13 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   color: #fff;
 }
 .footer_area .footer_row .footer_about address .my_address li a i {
-  color: #f6b60b;
+  color: #fff;
   padding-right: 20px;
   font-size: 14px;
   display: inline-block;
 }
 .footer_area .footer_row .footer_about address .my_address li a:hover, .footer_area .footer_row .footer_about address .my_address li a:focus {
-  color: #f6b60b;
+  color: #008000;
 }
 .footer_area .footer_row .footer_about address .my_address li span {
   display: inline-block;
@@ -2195,19 +2196,18 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   margin-top: -30px;
 }
 .footer_area .copyright_area {
-  background: #090909;
   font: 400 14px/100px "Roboto", sans-serif;
-  color: #fefefe;
+  color: #008000;
   text-align: center;
 }
 .footer_area .copyright_area a {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
-  color: #f6b60b;
+  color: #008000;
 }
 .footer_area .copyright_area a:hover, .footer_area .copyright_area a:focus {
-  color: #fefefe;
+  color: #008000;
 }
 
 /*--------------------------------------------------*/
@@ -2409,7 +2409,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
     background-color: transparent;
   }
   .header_aera .navbar-collapse .navbar-nav.navbar-right li.submenu ul li a:hover, .header_aera .navbar-collapse .navbar-nav.navbar-right li.submenu ul li a:focus {
-    color: #f6b60b;
+    color: #006400;
   }
 
   .slider_inner.camera_wrap {

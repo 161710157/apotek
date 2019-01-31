@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Apotek</title>
+    <title>Apotek Prima</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset ('assets/frontend/images/Money.png') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset ('assets/frontend/images/preloader.jpg') }}" type="image/x-icon" />
     <!-- Bootstrap CSS -->
     <link href="{{ asset ('assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Animate CSS -->
@@ -34,11 +34,11 @@
     <div class="preloader"></div>
 
     <!-- Top Header_Area -->
-     <section class="top_header_area">
+     <!--<section class="top_header_area">
         <div class="container">
             <ul class="nav navbar-nav top_nav">
-                <li><a href="#"><i class="fa fa-phone"></i>+085721055509</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i>asleatherofficial@gmail.com</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>+5400 932</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>apotekprima@gmail.com</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
                 <li><a href="https://www.facebook.com/profile.php?id=100007428854904&ref=br_rs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -71,7 +71,7 @@
                     <span class="icon-bar"></span>
                     </button>
                     <br>
-                    <img src="{{ asset ('assets/frontend/images/FB_IMG_15361098794607620.png') }}" width="70" height="70" alt=""></a>
+                    <img src="{{ asset ('assets/frontend/images/lg.png') }}" width="70" height="70" alt=""></a>
                 </div>
             </div>
 
@@ -80,9 +80,10 @@
                 <div class="collapse navbar-collapse" id="min_navbar">
                     <div class="top_bar_login ml-auto">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/index">Home</a></li>
+                        <li><a href="/index">Beranda</a></li>
                         <li><a href="/produk">Produk</a></li>
                         <li><a href="/galeri">Galeri</a></li>
+                        <li><a href="/blog">Artikel</a></li>
                         <li><a href="/contact">Kontak</a></li>
                         </ul>
                     </div>
@@ -96,7 +97,7 @@
     <section class="banner_area" data-stellar-background-ratio="0.5">
         <h2>Produk</h2>
         <ol class="breadcrumb">
-            <li><a href="/index">Home</a></li>
+            <li><a href="/index">Beranda</a></li>
             <li><a href="/produk" class="active">Produk</a></li>
         </ol>
     </section>
@@ -104,21 +105,21 @@
 
     <!-- blog-2 area -->
 <!-- Our Services Area -->
-    @php
-$obats =App\Obat::all();
+@php
+$obats =App\Obat::where('status','=',1)->get();
 $kategoris =App\Kategori::all();
 @endphp
     <section class="our_services_area">
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Produk</h2>
-            </div>
+                </div>
             <div class="portfolio_inner_area">
                 <div class="portfolio_filter">
                     <ul>
-                        <li data-filter="*" class="active"><a href="{{url('/index')}}"> All</a></li>
+                        <li data-filter="*" class="active"><a href="{{url('/index')}}"> All Category</a></li>
                     @foreach($kategoris as $data)
-                        <li data-filter=".painting{{$data->id}}"><a href="{{url('/barang_kategori',$data->id)}}">{{$data->nama_kategori}}</a></li>
+                        <li data-filter=".painting{{$data->id}}"><a href="{{url('/kategori_obat',$data->id)}}">{{$data->kategori}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -127,19 +128,13 @@ $kategoris =App\Kategori::all();
                    @foreach($obats as $data)
                     <div class="single_facilities col-xs-4 p0 painting{{$data->kategoris->id}}">
                        <div class="single_facilities_inner">
-                            <div class="about_image"><img src="{{ asset ('assets/img/fotoobat/' .$data->gambar. '' ) }}" width="370" height="370"></div><br>
-                         <h2>
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ $data->nama_obat }}
-                        </h2>
-                        
-
+                          	<div class="about_image"><img src="{{ asset ('assets/img/fotoobat/' .$data->gambar. '' ) }}" width="370" height="370"></div><br>
                             <div class="gallery_hover">
                                 <a href="/produks/singleproduk/{{$data->slug}}" class="single-blog-item">
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <h4>Detail</h4>
-                                </ul>
+                                  <br>
+                                  <br>
+                                  <br>
+                                  <h4>Detail Produk</h4>
                             </div>
                         </div>
                     </div>
@@ -157,8 +152,8 @@ $kategoris =App\Kategori::all();
         <div class="container">
             <div class="footer_row row">
                 <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>AS LEATHER</h2>
-                    <p>Dompet yang terbuat dari kulit memiliki kelebihan di banding dompet yang terbuat dari bahan lain. biasanya kalo dompet kulit di simpan disaku celana belakang tidak mudah terjatuh, karena dompet kulit selalu mengikuti bentuk dari celana itu sendiri.</p>
+                    <h2>Apotek Prima</h2>
+                    <p>Apotek merupakan suatu tempat tertentu untuk melakukan pekerjaan kefarmasian yang dikelola oleh Apoteker sesuai standar,etika dan penyaluran obat obatan kepada masyarakat.</p>
                     <ul class="socail_icon">
                         <li><a href="https://www.facebook.com/profile.php?id=100007428854904&ref=br_rs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/as_leather_accessories/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -166,47 +161,48 @@ $kategoris =App\Kategori::all();
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Tautan</h2>
-                    
                     <ul class="quick_link">
                         <li><a href="/index"><i class="fa fa-chevron-right"></i>Beranda</a></li>
                         <li><a href="/produk"><i class="fa fa-chevron-right"></i>Produk</a></li>
                         <li><a href="/galeri"><i class="fa fa-chevron-right"></i>Galeri</a></li>
+                        <li><a href="/blog"><i class="fa fa-chevron-right"></i>Artikel</a></li>
                         <li><a href="/contact"><i class="fa fa-chevron-right"></i>Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>Dompet</h2>
-                    <p>Dompet adalah tas kecil yang berfungsi untuk menyimpan uang kertas atau identitas seperti, KTP, kartu ATM, SIM, foto pacar atau orang yang kita sayangi dan lain-lain.</p>
+                    <h2>Obat</h2>
+                   <p>Obat adalah semua bahan tunggal/campuran yang dipergunakan oleh semua makhluk untuk bagian dalam maupun luar, guna mencegah, meringankan ataupun menyembuhkan penyakit.</p>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Kontak</h2>
                     <address>
                         <p>Punya pertanyaan, komentar atau hanya ingin menyapa:</p>
                         <ul class="my_address">
-                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>asleatherofficial@gmail.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+085721055509</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.Cibaduyut Dalam 1 No.33</a></li>
+                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>apotekprima@gmail.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+5400 932</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.Raya Sukamenak  No.153B</a></li>
                         </ul>
                     </address>
                 </div>
             </div>
         </div>
         <div class="copyright_area">
-            Copyright 2017 All rights reserved. Designed by AS LEATHER.</a>
+            Copyright 2017 All rights reserved. Designed by Apotekprima.</a>
         </div>
     </footer>
-    <!--Start of Tawk.to Script-->
+   <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ba0a856c9abba579677a549/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5c32a69e7a79fc1bddf38374/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 <!--End of Tawk.to Script-->
     <!-- End Footer Area -->
 

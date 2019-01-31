@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Galeri;
 use File;
 use Auth;
-
+use Alert;
 
 class GaleriController extends Controller
 {
@@ -47,8 +47,11 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::success('Data Successfully Saved','Good Job!')->autoclose(1700);
+
         $this->validate($request,[
             'gambar' => 'required|',
+            'judul' => 'required|',
             'slug' => '',
         ]);
         $galeris = new Galeri;
@@ -60,6 +63,7 @@ class GaleriController extends Controller
             $galeris->gambar = $filename;
         }
         $galeris->slug =str_slug($request->nama_obat,'-');
+        $galeris->judul = $request->judul;
         $galeris->save();
         
                 return redirect()->route('galeri.index');
@@ -100,8 +104,11 @@ class GaleriController extends Controller
      */
     public function update(Request $request,  $id)
     {
+           Alert::success('Data Successfully Changed','Good Job!')->autoclose(1700);
+          
         $this->validate($request,[
             'gambar' => 'required|',
+            'judul' => 'required|',
             'slug' => '',
         ]);
         $galeris = Galeri::findOrFail($id);
@@ -124,6 +131,7 @@ class GaleriController extends Controller
             $galeris->gambar = $filename;
         }
         $galeris->slug =str_slug($request->nama_obat,'-');
+        $galeris->judul = $request->judul;
         $galeris->save();
         return redirect()->route('galeri.index');
     }
@@ -137,6 +145,7 @@ class GaleriController extends Controller
      */
     public function destroy( $id)
     {
+        Alert::success('Data Successfully Deleted','Good Job!')->autoclose(1700);
        $galeris = Galeri::findOrFail($id);
         $galeris->delete();
         return redirect()->route('galeri.index');

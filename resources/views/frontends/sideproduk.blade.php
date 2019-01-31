@@ -19,7 +19,8 @@
                         {{ $data->created_at->diffForHumans() }}
                     </p>
                     <p>
-                            <i class="fa fa-heart" aria-hidden="true"></i>&nbsp Rp.{{ $data->harga }}</a>
+         <i class="fa fa-heart" aria-hidden="true"></i>&nbsp Rp.{{ number_format($data->harga,2,',','.')}}
+                          
                         </p>
                         <br>
                 </div>

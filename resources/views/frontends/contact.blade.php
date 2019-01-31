@@ -34,10 +34,10 @@
     <div class="preloader"></div>
 
 	<!-- Top Header_Area -->
-	 <section class="top_header_area">
+	<!--  <section class="top_header_area">
         <div class="container">
             <ul class="nav navbar-nav top_nav">
-                <li><a href="#"><i class="fa fa-phone"></i>+085721055509</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>+5400 932</a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i>ApotekPrima@gmail.com</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
@@ -71,7 +71,7 @@
                     <span class="icon-bar"></span>
                     </button>
                     <br>
-                    <img src="{{ asset ('assets/frontend/images/FB_IMG_15361098794607620.png') }}" width="70" height="70" alt=""></a>
+                    <img src="{{ asset ('assets/frontend/images/lg.png') }}" width="70" height="70" alt=""></a>
                 </div>
             </div>
 
@@ -80,10 +80,10 @@
                 <div class="collapse navbar-collapse" id="min_navbar">
                     <div class="top_bar_login ml-auto">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/index">Home</a></li>
+                        <li><a href="/index">Beranda</a></li>
                         <li><a href="/produk">Produk</a></li>
                         <li><a href="/galeri">Galeri</a></li>
-                        <li><a href="/testimoni">Testimoni</a></li>
+                        <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Kontak</a></li>
                         </ul>
                     </div>
@@ -94,19 +94,13 @@
     <!-- End Header_Area -->
 
     <!-- Banner area -->
-    <section class="banner_area" data-stellar-background-ratio="0.5">
-        <h2>Kontak</h2>
-        <ol class="breadcrumb">
-            <li><a href="/index">Home</a></li>
-            <li><a href="/contact" class="active">Kontak</a></li>
-        </ol>
-    </section>
+  
     <!-- End Banner area -->
 
     <!-- Map -->
 
                 <!-- Google Maps -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.496646562009!2d107.5921870142443!3d-6.9505917699763184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e973bd894a8d%3A0xd0b44a0e6fd7d0ad!2sAS+Leather!5e0!3m2!1sid!2sid!4v1539069525876" width="1355" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.317213516894!2d107.58432981477314!3d-6.971852494963306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e927dc691917%3A0x7cf815cbe282f769!2sJl.+Sukamenak+No.153B%2C+Sukamenak%2C+Margahayu%2C+Bandung%2C+Jawa+Barat+40227!5e0!3m2!1sid!2sid!4v1544671147238" width="1355" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
     <!-- End Map -->
 
     <!-- All contact Info -->
@@ -115,8 +109,8 @@
             <div class="row contact_row">
                 <div class="col-sm-6 contact_info">
                     <h2>Info Kontak</h2>
-                    <p>Pengrajin Dompet berbahan kulit asal Cibaduyut.Produk yang terbatas di dalam komunitas pecinta sepeda motor,kini mampu menembus pesanan seperti Singapura, Malaysia, Brunei Darussalaam dan Australia.</p>
-                    <p>Agung Ghani karyawan dari apotek prima asal sukamenak kota Bandung yang berlatar belakang pendidikan sekolah menengah kejuruan jurusan listrik.Namun ia mengaku tak hanya bergantung pada keahliannya itu untuk mencari penghidupan.</p>
+                    <p>Apotek merupakan suatu tempat tertentu untuk melakukan pekerjaan kefarmasian yang dikelola oleh Apoteker sesuai standar,etika dan penyaluran obat obatan kepada masyarakat.</p>
+                    <p>Agung Ghani karyawan dari apotek prima asal sukamenak kota Bandung yang berlatar belakang pendidikan sekolah menengah kejuruan keparmasian.Namun ia mengaku tak hanya bergantung pada keahliannya itu untuk mencari penghidupan.</p>
                     <div class="location">
                         <div class="location_laft">
                             <a class="f_location" href="#">Lokasi</a>
@@ -124,8 +118,8 @@
                             <a href="#">email</a>
                         </div>
                         <div class="address">
-                            <a href="#">Jln.sukamenak Dalam 1 <br> No.33 </a>
-                            <a href="#">+085721055509</a>
+                            <a href="#">Jln.raya sukamenak<br> No.153B </a>
+                            <a href="#">+5400 932</a>
                             <a href="#">apotekprima@gmail.com</a>
                         </div>
                     </div>
@@ -146,7 +140,7 @@
             <div class="footer_row row">
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Apotek Prima</h2>
-                    <p>Dompet yang terbuat dari kulit memiliki kelebihan di banding dompet yang terbuat dari bahan lain. biasanya kalo dompet kulit di simpan disaku celana belakang tidak mudah terjatuh, karena dompet kulit selalu mengikuti bentuk dari celana itu sendiri.</p>
+                    <p>Apotek merupakan suatu tempat tertentu untuk melakukan pekerjaan kefarmasian yang dikelola oleh Apoteker sesuai standar,etika dan penyaluran obat obatan kepada masyarakat.</p>
                     <ul class="socail_icon">
                         <li><a href="https://www.facebook.com/profile.php?id=100007428854904&ref=br_rs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/as_leather_accessories/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -154,26 +148,24 @@
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Tautan</h2>
-                    
-                    <ul class="quick_link">
+                     <ul class="quick_link">
                         <li><a href="/index"><i class="fa fa-chevron-right"></i>Beranda</a></li>
                         <li><a href="/produk"><i class="fa fa-chevron-right"></i>Produk</a></li>
                         <li><a href="/galeri"><i class="fa fa-chevron-right"></i>Galeri</a></li>
-                        <li><a href="/testimoni"><i class="fa fa-chevron-right"></i>Testimoni</a></li>
                         <li><a href="/contact"><i class="fa fa-chevron-right"></i>Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Obat</h2>
-                    <p>Dompet adalah tas kecil yang berfungsi untuk menyimpan uang kertas atau identitas seperti, KTP, kartu ATM, SIM, foto pacar atau orang yang kita sayangi dan lain-lain.</p>
-                </div><div class="col-md-3 col-sm-6 footer_about">
+                    <p>Obat adalah semua bahan tunggal/campuran yang dipergunakan oleh semua makhluk untuk bagian dalam maupun luar, guna mencegah, meringankan ataupun menyembuhkan penyakit.</p>
+                 </div><div class="col-md-3 col-sm-6 footer_about">
                     <h2>Kontak</h2>
                     <address>
                         <p>Punya pertanyaan, komentar atau hanya ingin menyapa:</p>
                         <ul class="my_address">
                             <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>apotekprima@gmail.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+085721055509</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.sukamenak Dalam 1 No.33 </a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+5400 932</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.sukamenak No.153B </a></li>
                         </ul>
                     </address>
                 </div>
@@ -183,18 +175,19 @@
             Copyright All rights reserved. Designed by ApotekPrima.</a>
         </div>
     </footer>
-    <!--Start of Tawk.to Script-->
+     <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ba0a856c9abba579677a549/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5c32a69e7a79fc1bddf38374/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 <!--End of Tawk.to Script-->
     <!-- End Footer Area -->
 

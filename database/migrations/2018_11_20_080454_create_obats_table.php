@@ -20,6 +20,7 @@ class CreateObatsTable extends Migration
             $table->String('gambar');
             $table->text('deskripsi');
             $table->string('slug');
+            $table->boolean('status')->default(false);
             $table->UnsignedInteger('kategori_id');
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
             $table->timestamps();

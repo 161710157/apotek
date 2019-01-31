@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Kategori;
-
 use Illuminate\Http\Request;
+use App\Kategori;
+use Alert;
 
 class KategoriController extends Controller
 {
@@ -38,6 +37,8 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+         Alert::success('Data Successfully Saved','Good Job!')->autoclose(1700);
+         
         $this->validate($request,[
             'kategori' => 'required|unique:kategoris|max:255',
             
@@ -83,6 +84,8 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
+         Alert::success('Data Successfully Changed','Good Job!')->autoclose(1700);
+
         $this->validate($request,[
             'kategori' => 'required|max:255',
         ]);
@@ -101,6 +104,8 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
+        Alert::success('Data Successfully Deleted','Good Job!')->autoclose(1700);
+
         $kategoris = Kategori::findOrFail($id);
         $kategoris->delete();
         return redirect()->route('kategori.index');

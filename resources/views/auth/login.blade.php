@@ -1,22 +1,28 @@
-@extends('layouts.app')
-
+@extends('layouts.login')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+<div class="limiter">
+        <div class="container-login100" style="background-image: url('images/img.jpg');">
+            <div class="wrap-login100 p-t-190 p-b-30">
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
+                <form class="login100-form validate-form">
+                    <div class="login100-form-avatar">
+                        <img src="/assets/login/images/4.png" alt="AVATAR">
+                    </div>
+
+                    <span class="login100-form-title p-t-20 p-b-45">
+                        LOGIN
+                    </span>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Email">
+                                <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                                <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+                                <span class="focus-input100" data-placeholder="&#xf207;"></span>    
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -26,10 +32,13 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            <div class="wrap-input100 validate-input" data-validate="Enter password">
+                                <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                                <input id="password" type="password" class="input100" name="password" placeholder="Password" required>
+                                <span class="focus-input100" data-placeholder="&#xf191;"></span>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -39,31 +48,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    <div class="container-login100-form-btn p-t-10">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>                    
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Apotek</title>
+    <title>Apotek Prima</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset ('assets/frontend/images/preloader.jpg') }}" type="image/x-icon" />
@@ -34,10 +34,11 @@
     <div class="preloader"></div>
 
 	<!-- Top Header_Area -->
-	 <section class="top_header_area">
+	 <!--<section class="top_header_area">
         <div class="container">
             <ul class="nav navbar-nav top_nav">
-                <li><a href="#"><i class="fa fa-phone"></i>+0895401489639</a></li>
+                <li><a href="tel:+5400 932"><i class="fa fa-phone"></i>+5400 932</a></li>
+
                 <li><a href="#"><i class="fa fa-envelope-o"></i>apotekprima@gmail.com</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
@@ -45,7 +46,7 @@
                 <li><a href="https://www.instagram.com/as_leather_accessories/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
     <!-- End Top Header_Area -->
 
     <!-- Header_Area -->
@@ -71,7 +72,7 @@
                     <span class="icon-bar"></span>
                     </button>
                     <br>
-                    <img src="{{ asset ('assets/frontend/images/as-logo-png-6.png') }}" width="60" height="60" alt=""></a>
+                    <img src="{{ asset ('assets/frontend/images/lg.png') }}" width="60" height="60" alt=""></a>
                 </div>
             </div>
 
@@ -80,9 +81,10 @@
                 <div class="collapse navbar-collapse" id="min_navbar">
                     <div class="top_bar_login ml-auto">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/index">Home</a></li>
+                        <li><a href="/index">Beranda</a></li>
                         <li><a href="/produk">Produk</a></li>
                         <li><a href="/galeri">Galeri</a></li>
+                        <li><a href="/blog">Artikel</a></li>
                         <li><a href="/contact">Kontak</a></li>
                         </ul>
                     </div>
@@ -95,19 +97,17 @@
     <!-- Slider area -->
     <section class="slider_area row m0">
         <div class="slider_inner">
-            <div data-thumb="{{ asset ('assets/frontend/images/news.jpg') }}" data-src="{{ asset ('assets/frontend/images/slider-1.jpg') }}">
+            <div data-thumb="{{ asset ('assets/frontend/images/apoteker.jpg') }}" data-src="{{ asset ('assets/frontend/images/apoteker.jpg') }}">
                 <div class="camera_caption">
                    <div class="container">
-                        <h5 class=" wow fadeInUp animated">Selamat Datang Di</h5>
-                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s"> WebSite Apotek Prima</h3>
+
                    </div>
                 </div>
             </div>
-            <div data-thumb="{{ asset ('assets/frontend/images/news_4.jpg') }}" data-src="{{ asset ('assets/frontend/images/news_6.jpg') }}">
+            <div data-thumb="{{ asset ('assets/frontend/images/kapsul.jpg') }}" data-src="{{ asset ('assets/frontend/images/kapsul.jpg') }}">
                 <div class="camera_caption">
                    <div class="container">
-                        <h5 class=" wow fadeInUp animated">Selamat Datang Di</h5>
-                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s"> WebSite Apotek Prima</h3>
+
                    </div>
                 </div>
             </div>
@@ -162,8 +162,8 @@
     <!-- End Our Features Area -->
 
     <!-- Our Services Area -->
-    @php
-$obats =App\Obat::take(6)->get();
+    <!--@php
+$obats =App\Obat::where('status','=',1)->get();
 $kategoris =App\Kategori::all();
 @endphp
     <section class="our_services_area">
@@ -174,7 +174,7 @@ $kategoris =App\Kategori::all();
             <div class="portfolio_inner_area">
                 <div class="portfolio_filter">
                     <ul>
-                        <li data-filter="*" class="active"><a href="{{url('/index')}}"> All</a></li>
+                        <li data-filter="*" class="active"><a href="{{url('/index')}}"> All Category</a></li>
                     @foreach($kategoris as $data)
                         <li data-filter=".painting{{$data->id}}"><a href="{{url('/obat_kategori',$data->id)}}">{{$data->kategori}}</a></li>
                         @endforeach
@@ -191,7 +191,7 @@ $kategoris =App\Kategori::all();
                                   <br>
                                   <br>
                                   <br>
-                                  <h4>Detail</h4>
+                                  <h4>Detail Produk</h4>
                             </div>
                         </div>
                     </div>
@@ -201,8 +201,8 @@ $kategoris =App\Kategori::all();
         </div>
     </section>
 
-        @php
-$galeris =App\Galeri::all();
+      <!--  @php
+$galeris =App\Galeri::paginate(3);
 @endphp
 <style type="text/css">
     * {margin: 0;padding:0}
@@ -331,15 +331,63 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
             </ul>
         </li>
 </ul>
-            @endforeach
-</section>
+           @endforeach
+           
+        </section>
+    </div>
 </div>
+<center>
+    <br>
+    <br>
+    <br>
+{{ $galeris->links() }} </center>
+
+          <!-- End Our Featured Works Area -->
+
+   <!-- blog-2 area -->
+<!--@php
+$artikels =App\Artikel::paginate(3);
+$kategoriarikels =App\Kategoriartikel::all();
+
+@endphp
+       <section class="blog_tow_area">
+        <div class="container">
+            <div class="tittle wow fadeInUp">
+                <h2>ARTIKEL</h2>
+            </div>
+            <br>
+            <br>
+           <div class="row blog_tow_row">
+                 @foreach($artikels as $data)
+                <div class="col-md-4 col-sm-6">
+                    <div class="renovation">
+                        <div class="about_image">
+                            <img src="{{ asset ('assets/img/artikel/' .$data->gambar. '' ) }}" width="400" height="300">
+                        <div class="renovation_content">
+                            <a class="tittle" href="/artikels/single/{{$data->slug}}">{{$data->judul}}</a>
+                            <div class="date_comment">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                {{ $data->created_at->diffForHumans() }}</a>
+                            </div>
+                            <p>
+                                <br>
+                            <a href="/artikels/single/{{$data->slug}}" class="single-blog-item"></a></p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        @endforeach
+    </div>
+</section>
+    <!-- End Our Latest Blog Area -->
+    {{ $artikels->links() }} </center>
+
     <footer class="footer_area">
         <div class="container">
             <div class="footer_row row">
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Apotek Prima</h2>
-                    <p>Apotek yang terbuat dari kulit memiliki kelebihan di banding dompet yang terbuat dari bahan lain. biasanya kalo dompet kulit di simpan disaku celana belakang tidak mudah terjatuh, karena dompet kulit selalu mengikuti bentuk dari celana itu sendiri.</p>
+                    <p>Apotek merupakan suatu tempat tertentu untuk melakukan pekerjaan kefarmasian yang dikelola oleh Apoteker sesuai standar,etika dan penyaluran obat obatan kepada masyarakat.</p>
                     <ul class="socail_icon">
                 <li><a href="https://www.facebook.com/profile.php?id=100007428854904&ref=br_rs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/as_leather_accessories/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -349,15 +397,16 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Tautan</h2>
                     <ul class="quick_link">
-                        <li><a href="/index"><i class="fa fa-chevron-right"></i>Home</a></li>
+                        <li><a href="/index"><i class="fa fa-chevron-right"></i>Beranda</a></li>
                         <li><a href="/produk"><i class="fa fa-chevron-right"></i>Produk</a></li>
                         <li><a href="/galeri"><i class="fa fa-chevron-right"></i>Galeri</a></li>
+                        <li><a href="/blog"><i class="fa fa-chevron-right"></i>Artikel</a></li>
                         <li><a href="/contact"><i class="fa fa-chevron-right"></i>Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Obat</h2>
-                    <p>Obat adalah tas kecil yang berfungsi untuk menyimpan uang kertas atau identitas seperti, KTP, kartu ATM, SIM, foto pacar atau orang yang kita sayangi dan lain-lain.</p>
+                    <p>Obat adalah semua bahan tunggal/campuran yang dipergunakan oleh semua makhluk untuk bagian dalam maupun luar, guna mencegah, meringankan ataupun menyembuhkan penyakit.</p>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Kontak</h2>
@@ -365,8 +414,8 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
                         <p>Punya pertanyaan, komentar atau hanya ingin menyapa:</p>
                         <ul class="my_address">
                             <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>apotekprima@gmail.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+085721055509</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.sukamenak Dalam 1 No.33</a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+5400 932</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.Raya Sukamenak No.153B</a></li>
                         </ul>
                     </address>
                 </div>
@@ -377,17 +426,19 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
         </div>
     </footer>
     <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/5ba0a856c9abba579677a549/default';
+s1.src='https://embed.tawk.to/5c32a69e7a79fc1bddf38374/default';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+<!--End of Tawk.to Script-->
 <!--End of Tawk.to Script-->
     <!-- End Footer Area -->
 

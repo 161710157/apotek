@@ -34,11 +34,11 @@
     <div class="preloader"></div>
 
 	<!-- Top Header_Area -->
-	 <section class="top_header_area">
+	 <!--<section class="top_header_area">
         <div class="container">
             <ul class="nav navbar-nav top_nav">
-                <li><a href="#"><i class="fa fa-phone"></i>+085721055509</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i>asleatherofficial@gmail.com</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>+5400 932</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>apotekprima@gmail.com</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
                 <li><a href="https://www.facebook.com/profile.php?id=100007428854904&ref=br_rs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -71,7 +71,7 @@
                     <span class="icon-bar"></span>
                     </button>
                     <br>
-                    <img src="{{ asset ('assets/frontend/images/FB_IMG_15361098794607620.png') }}" width="70" height="70" alt=""></a>
+                    <img src="{{ asset ('assets/frontend/images/lg.png') }}" width="70" height="70" alt=""></a>
                 </div>
             </div>
 
@@ -80,9 +80,10 @@
                 <div class="collapse navbar-collapse" id="min_navbar">
                     <div class="top_bar_login ml-auto">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/index">Home</a></li>
+                        <li><a href="/index">Beranda</a></li>
                         <li><a href="/produk">Produk</a></li>
                         <li><a href="/galeri">Galeri</a></li>
+                        <li><a href="/blog">Artikel</a></li>
                         <li><a href="/contact">Kontak</a></li>
                         </ul>
                     </div>
@@ -96,14 +97,14 @@
     <section class="banner_area" data-stellar-background-ratio="0.5">
         <h2>Galeri</h2>
         <ol class="breadcrumb">
-            <li><a href="/index">Home</a></li>
+            <li><a href="/index">Beranda</a></li>
             <li><a href="/galeri" class="active">Galeri</a></li>
         </ol>
     </section>
     <!-- End Banner area -->
 
     <!-- Our Services Area -->
-    <section class="our_services_tow">
+    <!--<section class="our_services_tow">
         <div class="container">
             <div class="architecture_area services_pages">
                 <div class="portfolio_filter portfolio_filter_2">
@@ -121,7 +122,7 @@
                         </div>
                     </div>
                     <div class="single_facilities col-sm-5 painting webdesign">
-                        <img src="{{ asset ('assets/frontend/images/IMG.jpg') }}" alt="">
+                        <img src="{{ asset ('assets/frontend/images/teacher_3.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -130,9 +131,12 @@
     <!-- End Our Services Area -->
 
     <!-- Our Featured Works Area -->
-    
 
-<style type="text/css">
+    @php
+    $galeris =App\Galeri::paginate(1);
+    @endphp
+    
+    <style type="text/css">
     * {margin: 0;padding:0}
 body {background: #FFF}
 h1 {color: #aaa;margin: 10px}
@@ -239,7 +243,6 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
   visibility: hidden;  
 }
 </style>
-
     
 <div style="text-align: center">
             <div class="tittle wow fadeInUp">
@@ -259,11 +262,20 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
             </ul>
         </li>
 </ul>
+
+<h5>
+    {{ $data->judul }}
+</h5>
+
+
             @endforeach
+
+
 </section>
 </div>
     <!-- End Our Featured Works Area -->
-
+    <center>
+{{ $galeris->links() }} </center>
     <!-- Our Team Area -->
     <!-- End Our Team Area -->
 
@@ -273,7 +285,7 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
             <div class="footer_row row">
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>Apotek Prima</h2>
-                    <p>Dompet yang terbuat dari kulit memiliki kelebihan di banding dompet yang terbuat dari bahan lain. biasanya kalo dompet kulit di simpan disaku celana belakang tidak mudah terjatuh, karena dompet kulit selalu mengikuti bentuk dari celana itu sendiri.</p>
+                    <p>Apotek merupakan suatu tempat tertentu untuk melakukan pekerjaan kefarmasian yang dikelola oleh Apoteker sesuai standar,etika dan penyaluran obat obatan kepada masyarakat</p>
                     <ul class="socail_icon">
                         <li><a href="https://www.facebook.com/profile.php?id=100007428854904&ref=br_rs"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/as_leather_accessories/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -281,25 +293,26 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Tautan</h2>
-                    
                     <ul class="quick_link">
                         <li><a href="/index"><i class="fa fa-chevron-right"></i>Beranda</a></li>
                         <li><a href="/produk"><i class="fa fa-chevron-right"></i>Produk</a></li>
                         <li><a href="/galeri"><i class="fa fa-chevron-right"></i>Galeri</a></li>
+                        <li><a href="/blog"><i class="fa fa-chevron-right"></i>Artikel</a></li>
+                        <li><a href="/testimoni"><i class="fa fa-chevron-right"></i>Testimoni</a></li>
                         <li><a href="/contact"><i class="fa fa-chevron-right"></i>Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>Apotek</h2>
-                    <p>Obat adalah tas kecil yang berfungsi untuk menyimpan uang kertas atau identitas seperti, KTP, kartu ATM, SIM, foto pacar atau orang yang kita sayangi dan lain-lain.</p>
-                </div><div class="col-md-3 col-sm-6 footer_about">
+                    <h2>Obat</h2>
+                    <p>Obat adalah semua bahan tunggal/campuran yang dipergunakan oleh semua makhluk untuk bagian dalam maupun luar, guna mencegah, meringankan ataupun menyembuhkan penyakit.</p>
+                               </div><div class="col-md-3 col-sm-6 footer_about">
                     <h2>Kontak</h2>
                     <address>
                         <p>Punya pertanyaan, komentar atau hanya ingin menyapa:</p>
                         <ul class="my_address">
                             <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>apotekprima@gmail.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+085721055509</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.sukamenak Dalam 1 No.33</a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+5400 932</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Jln.Raya Sukamenak No.153B</a></li>
                         </ul>
                     </address>
                 </div>
@@ -309,18 +322,19 @@ input[type=checkbox].carouselFullScreen,input[type=checkbox].carousel-toggle {
             Copyright 2017 All rights reserved. Designed by ApotekPrima.</a>
         </div>
     </footer>
-    <!--Start of Tawk.to Script-->
+     <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ba0a856c9abba579677a549/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5c32a69e7a79fc1bddf38374/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 <!--End of Tawk.to Script-->
     <!-- End Footer Area -->
 
